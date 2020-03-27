@@ -1,6 +1,5 @@
 class Fork{
     public:
-        int oldid;
         bool getAvailable(){
             return isAvailable;
         }

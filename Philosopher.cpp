@@ -32,31 +32,30 @@ class Philosopher
         
         Philosopher(int index)
         :id(index){
-            //id= index;
             philNumb=5;
         }
         
         
-        void setStartThink(std::time_t timeVal){
+        void setStartThink(std::chrono::high_resolution_clock::time_point  timeVal){
             thinkingStarted = timeVal;
         }
         void setThinkPeriod(std::chrono::milliseconds timeVal){
             thinkingPeriod=timeVal;
         }
-        std::time_t getStartThink(){
+        std::chrono::high_resolution_clock::time_point  getStartThink(){
             return thinkingStarted;
         }
         std::chrono::milliseconds getThinkPeriod(){
             return thinkingPeriod;
         }
         
-        void setStartEat(std::time_t timeVal){
+        void setStartEat(std::chrono::high_resolution_clock::time_point timeVal){
             eatingStarted=timeVal;
         }
         void setEatPeriod(std::chrono::milliseconds timeVal){
             eatingPeriod=timeVal;
         }
-        std::time_t getStartEat(){
+        std::chrono::high_resolution_clock::time_point getStartEat(){
             return eatingStarted;
         }
         std::chrono::milliseconds getEatPeriod(){
@@ -64,9 +63,9 @@ class Philosopher
         }
 private:
     int state=1; //1-thinking 2-eating 3-hungry
-    std::time_t thinkingStarted;
+    std::chrono::high_resolution_clock::time_point  thinkingStarted;
     std::chrono::milliseconds thinkingPeriod;
-    std::time_t eatingStarted;
+     std::chrono::high_resolution_clock::time_point eatingStarted;
     std::chrono::milliseconds eatingPeriod;
     std::mutex m1;
 
